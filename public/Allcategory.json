@@ -1,0 +1,177 @@
+[
+    {
+      "category": "Laptops",
+      "products": [
+        {
+          "product_id": 1001,
+          "product_title": "TechBook Pro 14",
+          "product_image": "https://i.ibb.co.com/FhvtQ6R/1680869474654-MLTPCC0004-1.png",
+          "category": "Laptops",
+          "price": 1500,
+          "description": "A powerful laptop with a sleek design and a brilliant Retina display.",
+          "Specification": ["14-inch Retina display", "Intel Core i7", "16 GB RAM", "512 GB SSD"],
+          "availability": true,
+          "rating": 4.9,
+          "battery_life": "10 hours"
+        },
+        {
+          "product_id": 1002,
+          "product_title": "ZenLite 15",
+          "product_image": "https://i.ibb.co.com/6YC7VrT/zen-product.jpg",
+          "category": "Laptops",
+          "price": 950,
+          "description": "An ultra-portable laptop with long battery life and sharp visuals.",
+          "Specification": ["15.6-inch display", "AMD Ryzen 5", "8 GB RAM", "256 GB SSD"],
+          "availability": false,
+          "rating": 4.4,
+          "weight": "1.2 kg"
+        }
+      ]
+    },
+    {
+      "category": "Phones",
+      "products": [
+        {
+          "product_id": 2001,
+          "product_title": "XPhone 12 Pro",
+          "product_image": "https://i.ibb.co.com/hCmymTx/iphone-12-pro-blue-hero.jpg",
+          "category": "Phones",
+          "price": 999,
+          "description": "A high-end smartphone with an advanced camera system and fast processing.",
+          "Specification": ["6.1-inch display", "Triple camera system", "128 GB storage", "5G support"],
+          "availability": true,
+          "rating": 4.7,
+          "warranty": "1 year"
+        },
+        {
+          "product_id": 2002,
+          "product_title": "Galaxy Ultra 15",
+          "product_image": "https://i.ibb.co.com/X5xCbTn/samsung-galaxy-s20-ultra-cosmic-grey-official-image.webp",
+          "category": "Phones",
+          "price": 1199,
+          "description": "A powerful smartphone with superior battery life and camera technology.",
+          "Specification": ["6.8-inch display", "Quad camera system", "256 GB storage", "5G support"],
+          "availability": true,
+          "rating": 4.8,
+          "water_resistance": "IP68"
+        }
+      ]
+    },
+    {
+      "category": "Accessories",
+      "products": [
+        {
+          "product_id": 3001,
+          "product_title": "Noise Cancelling Headphones",
+          "product_image": "https://i.ibb.co.com/g3frcvW/51-EXj4-BRQa-L.jpg",
+          "category": "Accessories",
+          "price": 150,
+          "description": "High-quality noise-cancelling headphones for immersive sound.",
+          "Specification": ["Over-ear", "Bluetooth", "Active noise cancellation"],
+          "availability": true,
+          "rating": 4.5,
+          "battery_life": "30 hours"
+        },
+        {
+          "product_id": 3002,
+          "product_title": "Wireless Charger",
+          "product_image": "https://i.ibb.co.com/xHmrhQx/realistic-black-smartphone-charging-battery-charging-pad-35632-76.jpg",
+          "category": "Accessories",
+          "price": 60,
+          "description": "Fast wireless charger compatible with multiple devices.",
+          "Specification": ["15W charging", "Universal compatibility"],
+          "availability": true,
+          "rating": 4.3,
+          "cable_length": "1 meter"
+        }
+      ]
+    },
+    {
+      "category": "Smart Watches",
+      "products": [
+        {
+          "product_id": 4001,
+          "product_title": "SmartWatch X Series",
+          "product_image": "https://i.ibb.co.com/N2DwBr1/61-Irog1ae-JL.jpg",
+          "category": "Smart Watches",
+          "price": 300,
+          "description": "A sleek smartwatch with fitness tracking and call support.",
+          "Specification": ["Heart rate monitor", "GPS", "Bluetooth"],
+          "availability": true,
+          "rating": 4.6,
+          "battery_life": "2 days"
+        },
+        {
+          "product_id": 4002,
+          "product_title": "FitLife Pro Watch",
+          "product_image": "https://i.ibb.co.com/Q8fgsNj/EDA003784301-A-1.jpg",
+          "category": "Smart Watches",
+          "price": 200,
+          "description": "A smartwatch designed for active lifestyles with various workout modes.",
+          "Specification": ["Swimproof", "Sleep tracking", "Built-in speaker"],
+          "availability": false,
+          "rating": 4.2,
+          "connectivity": "Wi-Fi"
+        }
+      ]
+    },
+    {
+      "category": "MacBook",
+      "products": [
+        {
+          "product_id": 5001,
+          "product_title": "MacBook Air M2",
+          "product_image": "https://i.ibb.co.com/ydqgSJK/MBAM2.png",
+          "category": "MacBook",
+          "price": 1200,
+          "description": "A powerful yet thin MacBook with the M2 chip and stunning display.",
+          "Specification": ["13.6-inch Retina display", "Apple M2 chip", "8 GB RAM", "256 GB SSD"],
+          "availability": true,
+          "rating": 4.9,
+          "color_options": ["Silver", "Space Gray"]
+        },
+        {
+          "product_id": 5002,
+          "product_title": "MacBook Pro 16-inch",
+          "product_image": "https://i.ibb.co.com/RQqZ4pm/download.jpg",
+          "category": "MacBook",
+          "price": 2500,
+          "description": "The ultimate MacBook Pro for power users with unmatched performance.",
+          "Specification": ["16-inch Retina display", "Apple M1 Max chip", "16 GB RAM", "1 TB SSD"],
+          "availability": true,
+          "rating": 4.8,
+          "ports": ["Thunderbolt 4", "HDMI"]
+        }
+      ]
+    },
+    {
+      "category": "Iphone",
+      "products": [
+        {
+          "product_id": 6001,
+          "product_title": "iPhone 14 Pro Max",
+          "product_image": "https://i.ibb.co.com/7zqBxTG/apple-iphone-14-pro-max-1.jpg",
+          "category": "Iphone",
+          "price": 1300,
+          "description": "The latest iPhone with Pro features and dynamic island.",
+          "Specification": ["6.7-inch display", "Triple camera system", "A16 Bionic chip"],
+          "availability": true,
+          "rating": 4.9,
+          "security_features": "Face ID"
+        },
+        {
+          "product_id": 6002,
+          "product_title": "iPhone SE 3rd Gen",
+          "product_image": "https://i.ibb.co.com/KsGhVp2/111866-sp867-iphone-se-3gen.png",
+          "category": "Iphone",
+          "price": 500,
+          "description": "A compact iPhone with the power of the A15 Bionic chip.",
+          "Specification": ["4.7-inch display", "Single camera system", "64 GB storage"],
+          "availability": true,
+          "rating": 4.4,
+          "fast_charging": "18W"
+        }
+      ]
+    }
+  ]
+  

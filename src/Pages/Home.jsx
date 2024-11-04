@@ -1,9 +1,11 @@
 import React from "react";
+import Headings from "../Components/Headings";
 
 const Home = () => {
   return (
     <div>
-      <h1>Homepage</h1>
+      {/* Heading section  */}
+      <Headings tittle={"Explore Cutting-Edge Gadgets"} />
     </div>
   );
 };
