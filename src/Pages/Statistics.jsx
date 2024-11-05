@@ -18,7 +18,7 @@ const Statistics = () => {
         <h1 className="text-3xl">Statistics</h1>
       </div>
       <div className="bg-gray-100 py-4 ">
-        <div className=" w-3/4 mb-5 container mx-auto  px-4 space-y-5">
+        <div className="  mb-5 container mx-auto  px-4 space-y-5">
           <div className="flex items-center bg-white justify-between rounded-lg border p-3">
             <Chart />
           </div>
