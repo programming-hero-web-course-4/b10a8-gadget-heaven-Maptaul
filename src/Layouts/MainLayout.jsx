@@ -1,4 +1,3 @@
-import React from "react";
 import { Outlet } from "react-router-dom";
 import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
@@ -9,7 +8,7 @@ const MainLayout = () => {
     <div>
       {/* Navbar */}
       <Navbar />
-      <Banner />
+      {/* <Banner /> */}
       {/* Dynamic Section */}
       <div className="min-h-[calc(100vh-288px)] py-12">
         {/* Dynamic Section */}

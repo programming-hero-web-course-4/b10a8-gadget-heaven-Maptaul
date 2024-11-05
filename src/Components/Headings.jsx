@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import React from "react";
 const Headings = ({ tittle }) => {
   return (
     <div className="justify-center items-center py-8 text-center">
