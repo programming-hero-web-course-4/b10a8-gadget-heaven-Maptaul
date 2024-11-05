@@ -2,10 +2,12 @@ import React from "react";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+
 
 const Navbar = () => {
   return (
-    <div className="navbar sticky top-0 z-50 text-white bg-[#9538E2] py-10">
+    <div className="navbar sticky top-0 z-50 text-white bg-[#9538E2] py-5">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

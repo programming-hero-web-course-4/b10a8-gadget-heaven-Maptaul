@@ -1,5 +1,3 @@
-import React from "react";
-
 const ErrorPage = () => {
   return (
     <div className="justify-center items-center text-center py-12 space-y-10">
@@ -7,6 +5,11 @@ const ErrorPage = () => {
         Page not Found
       </h1>
       <p>Error Status : 404 😲 </p>
+      <img
+        className="w-[300px] mx-auto"
+        src="https://i.ibb.co.com/jHMGZy4/danger-symbol-labels-danger-warning-labels-p1421-47642-zoom.png"
+        alt=""
+      />
     </div>
   );
 };
