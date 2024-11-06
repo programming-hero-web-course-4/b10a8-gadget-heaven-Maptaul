@@ -1,22 +1,29 @@
+import { Link } from "react-router-dom";
+
 const Card = ({ product }) => {
-  const { product_title, product_image, price, description } = product || {};
+  if (!product) return null; // Return null if product is undefined
+
+  const { product_id, product_title, product_image, price, description } =
+    product;
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-center">
-      <div className="card bg-base-100 w-96 shadow-xl">
-        <figure>
-          <img
-            src="https://i.ibb.co.com/FhvtQ6R/1680869474654-MLTPCC0004-1.png"
-            alt="Products Image"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Dell XPS 13</h2>
-          <p>Price: 99.99k</p>
-          <div className="card-actions justify-normal">
-            <button className="btn text-purple-500 border-purple-500  rounded-full">
+    <div className="card card-compact bg-base-100 w-96 shadow-xl">
+      <figure className="bg-gray-100">
+        <img
+          className="h-60 w-60 p-5 rounded-md object-cover"
+          src={product_image}
+          alt=" Product Image"
+        />
+      </figure>
+      <div className="card-body">
+        <h2 className="card-title">{product_title}</h2>
+        <p>Price: $ {price}</p>
+        <div className="card-actions">
+          <Link to={`/productdetails/${product_id}`}>
+            <button className="btn text-purple-500 border-purple-500 rounded-full">
               View Details
             </button>
-          </div>
+          </Link>
         </div>
       </div>
     </div>

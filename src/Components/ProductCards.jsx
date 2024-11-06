@@ -5,19 +5,29 @@ import Card from "./Card";
 const ProductCards = () => {
   const data = useLoaderData();
   const { category } = useParams();
-  const [product, setProduct] = useState();
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    const filteredByCategory = [...data].filter(
-      (product) => product.category === category
-    );
-    setProduct(filteredByCategory);
+    const allProducts = data.flatMap((cat) => cat.products);
+    console.log("All Products:", allProducts);
+
+    if (category === "all") {
+      setProducts(allProducts);
+    } else {
+      const filteredByCategory = allProducts.filter(
+        (product) => product.category === category
+      );
+      setProducts(filteredByCategory);
+    }
   }, [category, data]);
-  // console.log(category);
+
   return (
-    <div className="w-3/4 grid">
-      {product.map((product) => (
-        <Card key={product.id} product={product} />
-      ))}
+    <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4">
+      {products.map((product) =>
+        product && product.product_id && product.product_title ? (
+          <Card key={product.product_id} product={product} />
+        ) : null
+      )}
     </div>
   );
 };

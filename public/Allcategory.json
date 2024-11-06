@@ -10,7 +10,7 @@
           "price": 1500,
           "description": "A powerful laptop with a sleek design and a brilliant Retina display.",
           "Specification": ["14-inch Retina display", "Intel Core i7", "16 GB RAM", "512 GB SSD"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.9,
           "battery_life": "10 hours"
         },
@@ -22,7 +22,7 @@
           "price": 950,
           "description": "An ultra-portable laptop with long battery life and sharp visuals.",
           "Specification": ["15.6-inch display", "AMD Ryzen 5", "8 GB RAM", "256 GB SSD"],
-          "availability": false,
+          "inStock": false,
           "rating": 4.4,
           "weight": "1.2 kg"
         }
@@ -39,7 +39,7 @@
           "price": 999,
           "description": "A high-end smartphone with an advanced camera system and fast processing.",
           "Specification": ["6.1-inch display", "Triple camera system", "128 GB storage", "5G support"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.7,
           "warranty": "1 year"
         },
@@ -51,7 +51,7 @@
           "price": 1199,
           "description": "A powerful smartphone with superior battery life and camera technology.",
           "Specification": ["6.8-inch display", "Quad camera system", "256 GB storage", "5G support"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.8,
           "water_resistance": "IP68"
         }
@@ -68,7 +68,7 @@
           "price": 150,
           "description": "High-quality noise-cancelling headphones for immersive sound.",
           "Specification": ["Over-ear", "Bluetooth", "Active noise cancellation"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.5,
           "battery_life": "30 hours"
         },
@@ -80,7 +80,7 @@
           "price": 60,
           "description": "Fast wireless charger compatible with multiple devices.",
           "Specification": ["15W charging", "Universal compatibility"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.3,
           "cable_length": "1 meter"
         }
@@ -97,7 +97,7 @@
           "price": 300,
           "description": "A sleek smartwatch with fitness tracking and call support.",
           "Specification": ["Heart rate monitor", "GPS", "Bluetooth"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.6,
           "battery_life": "2 days"
         },
@@ -109,7 +109,7 @@
           "price": 200,
           "description": "A smartwatch designed for active lifestyles with various workout modes.",
           "Specification": ["Swimproof", "Sleep tracking", "Built-in speaker"],
-          "availability": false,
+          "inStock": false,
           "rating": 4.2,
           "connectivity": "Wi-Fi"
         }
@@ -126,7 +126,7 @@
           "price": 1200,
           "description": "A powerful yet thin MacBook with the M2 chip and stunning display.",
           "Specification": ["13.6-inch Retina display", "Apple M2 chip", "8 GB RAM", "256 GB SSD"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.9,
           "color_options": ["Silver", "Space Gray"]
         },
@@ -138,7 +138,7 @@
           "price": 2500,
           "description": "The ultimate MacBook Pro for power users with unmatched performance.",
           "Specification": ["16-inch Retina display", "Apple M1 Max chip", "16 GB RAM", "1 TB SSD"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.8,
           "ports": ["Thunderbolt 4", "HDMI"]
         }
@@ -155,7 +155,7 @@
           "price": 1300,
           "description": "The latest iPhone with Pro features and dynamic island.",
           "Specification": ["6.7-inch display", "Triple camera system", "A16 Bionic chip"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.9,
           "security_features": "Face ID"
         },
@@ -167,7 +167,7 @@
           "price": 500,
           "description": "A compact iPhone with the power of the A15 Bionic chip.",
           "Specification": ["4.7-inch display", "Single camera system", "64 GB storage"],
-          "availability": true,
+          "inStock": true,
           "rating": 4.4,
           "fast_charging": "18W"
         }
