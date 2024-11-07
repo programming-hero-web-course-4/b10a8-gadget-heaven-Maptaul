@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Outlet, useLoaderData } from "react-router-dom";
 import Banner from "../Components/Banner";
 import Card from "../Components/Card";
 import Categories from "../Components/Categories";
 import Headings from "../Components/Headings";
+import { Context } from "../Context/ContextApi";
 
 const Home = () => {
   const categories = useLoaderData();
-  console.log(categories);
+
+  const { setProducts } = useContext(Context);
+
+  useEffect(() => {
+    setProducts(categories);
+  }, [categories, setProducts]); // Assuming you have a context to store user information
+
   return (
     <div>
       <Banner />

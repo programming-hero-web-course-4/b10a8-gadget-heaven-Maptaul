@@ -4,7 +4,7 @@ const Banner = () => {
     <div className="join grid mb-20">
       <div className="bg-[#9538E2] -mt-12">
         <div className="text-center mb-32 py-10">
-          <h1 className="text-4xl font-bold text-white mb-10">
+          <h1 className="text-5xl font-bold text-white mb-10">
             Upgrade Your Tech Accessorize with <br /> Gadget Heaven Accessories
           </h1>
           <p className="text-xl text-white mb-10">

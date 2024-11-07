@@ -1,33 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { CiShoppingCart } from "react-icons/ci";
 import { FaRegHeart } from "react-icons/fa";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 import Headings from "../Components/Headings";
+import { Context } from "../Context/ContextApi";
 
 const ProductDetails = () => {
-  const { productId } = useParams();
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const { state } = useLocation();
+  const { cart, setCart } = useContext(Context);
+  console.log(state);
+  const handleAddToCard = () => {
+    if (cart.includes(state)) {
+      return toast.error("Already in the cart");
+    }
+    setCart([...cart, state]);
+    toast.success("Add to card Successfully!");
+  };
 
-  const data = useLoaderData();
-
-  useEffect(() => {
-    const allProducts = data.flatMap((cat) => cat.products);
-
-    const selectedProduct = allProducts.find(
-      (product) => product.product_id === parseInt(productId)
-    );
-    setProduct(selectedProduct);
-    setLoading(false);
-  }, [data, productId]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!product) {
-    return <div>Product not found!</div>;
-  }
+  // if (!state) {
+  //   return <div>Product not found!</div>;
+  // }
 
   const {
     product_title,
@@ -37,7 +30,7 @@ const ProductDetails = () => {
     Specification,
     rating,
     inStock,
-  } = product;
+  } = state || {};
 
   return (
     <div className="-mt-12 text-center ">
@@ -90,7 +83,10 @@ const ProductDetails = () => {
               </button>
             </div>
             <div className="flex gap-3 text-3xl">
-              <button className="btn rounded-full bg-[#9538E2] text-white">
+              <button
+                onClick={handleAddToCard}
+                className="btn rounded-full bg-[#9538E2] text-white"
+              >
                 Add To Cart
                 <span className="text-2xl font-bold">
                   <CiShoppingCart />

@@ -19,7 +19,7 @@ const Card = ({ product }) => {
         <h2 className="card-title">{product_title}</h2>
         <p>Price: $ {price}</p>
         <div className="card-actions">
-          <Link to={`/productdetails/${product_id}`}>
+          <Link to={`/productdetails/${product_id}`} state={product}>
             <button className="btn text-purple-500 border-purple-500 rounded-full">
               View Details
             </button>

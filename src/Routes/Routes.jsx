@@ -16,12 +16,15 @@ const routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("../AllCategory.json"),
+        loader: () => fetch("/AllCategory.json"),
         children: [
           {
-            path: "/category/:category",
+            index: true,
             element: <ProductCards />,
-            loader: () => fetch("../AllCategory.json"),
+          },
+          {
+            path: ":category",
+            element: <ProductCards />,
           },
         ],
       },
@@ -36,7 +39,6 @@ const routes = createBrowserRouter([
       {
         path: "/productdetails/:productId",
         element: <ProductDetails />,
-        loader: () => fetch("../AllCategory.json"),
       },
     ],
   },
