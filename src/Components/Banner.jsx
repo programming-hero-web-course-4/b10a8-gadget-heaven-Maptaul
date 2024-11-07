@@ -12,7 +12,9 @@ const Banner = () => {
             next level. From smart devices to <br /> the coolest accessories, we
             have it all!
           </p>
-          <button className="btn rounded-full text-[#9538E2]">Shop Now</button>
+          <button className="btn rounded-full text-[#9538E2]">
+            <a href="/dashboard">Shop Now</a>
+          </button>
         </div>
       </div>
       <div className="w-2/4 h-96 relative z-10 mx-auto -mt-20 -mb-10 flex justify-center items-center rounded-xl p-3 bg-transparent backdrop-blur-xl ">

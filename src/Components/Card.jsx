@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Card = ({ product }) => {
-  if (!product) return null; // Return null if product is undefined
+  if (!product) return null;
 
   const { product_id, product_title, product_image, price, description } =
     product;
