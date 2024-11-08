@@ -8,8 +8,8 @@ import { Context } from "../Context/ContextApi";
 
 const ProductDetails = () => {
   const { state } = useLocation();
-  const { cart, setCart } = useContext(Context);
-  console.log(state);
+  const { cart, setCart, wishlist, setWishlist } = useContext(Context);
+  // console.log(state);
   const handleAddToCard = () => {
     if (cart.includes(state)) {
       return toast.error("Already in the cart");
@@ -17,10 +17,21 @@ const ProductDetails = () => {
     setCart([...cart, state]);
     toast.success("Add to card Successfully!");
   };
+  if (!state) {
+    return <div>Product not found!</div>;
+  }
 
-  // if (!state) {
-  //   return <div>Product not found!</div>;
-  // }
+  const handleAddToWishlist = () => {
+    if (wishlist.includes(state)) {
+      return toast.error("Already in the wishlist");
+    }
+    setWishlist([...wishlist, state]);
+    toast.success("Added to wishlist Successfully!");
+  };
+
+  if (!state) {
+    return <div>Product not found!</div>;
+  }
 
   const {
     product_title,
@@ -92,7 +103,10 @@ const ProductDetails = () => {
                   <CiShoppingCart />
                 </span>
               </button>
-              <button className="bg-white text-black rounded-full p-3">
+              <button
+                onClick={handleAddToWishlist}
+                className="bg-white text-black rounded-full p-3"
+              >
                 <FaRegHeart />
               </button>
             </div>

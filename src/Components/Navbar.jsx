@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../Context/ContextApi";
 
 const Navbar = () => {
-  const { cart } = useContext(Context);
+  const { cart, wishlist } = useContext(Context);
   return (
     <div className="navbar sticky top-0 z-50 text-white bg-[#9538E2] py-5">
       <div className="navbar-start">
@@ -47,11 +47,11 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end text-3xl gap-4">
-        <button className="bg-white text-black  rounded-full p-2">
-          <CiShoppingCart /> {cart.length}
+        <button className="flex bg-white text-black  rounded-full p-5 py-2">
+          <CiShoppingCart /> <span>{cart.length}</span>
         </button>
-        <button className="bg-white text-black  rounded-full p-2">
-          <FaRegHeart />
+        <button className=" flex bg-white text-black  rounded-full p-2">
+          <FaRegHeart /> <span>{wishlist.length}</span>
         </button>
       </div>
     </div>
