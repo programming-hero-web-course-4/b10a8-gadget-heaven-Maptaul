@@ -9,7 +9,6 @@ import { Context } from "../Context/ContextApi";
 const ProductDetails = () => {
   const { state } = useLocation();
   const { cart, setCart, wishlist, setWishlist } = useContext(Context);
-  // console.log(state);
   const handleAddToCard = () => {
     if (cart.includes(state)) {
       return toast.error("Already in the cart");

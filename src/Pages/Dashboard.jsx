@@ -3,35 +3,46 @@ import { FaSort } from "react-icons/fa";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { toast } from "react-toastify";
 import Headings from "../Components/Headings";
+import PopUp from "../Components/PopUp";
 import { Context } from "../Context/ContextApi";
 
 const Dashboard = () => {
-  const { cart, setCart } = useContext(Context);
+  const { cart, setCart, wishlist, setWishlist } = useContext(Context);
   const [totalCost, setTotalCost] = useState(0);
   const [isAscending, setIsAscending] = useState(true);
   const [activeTab, setActiveTab] = useState("cart");
-
-  const handleRemoveFromCart = (productId) => {
-    const updatedCart = cart.filter(
-      (product) => product.product_id !== productId
-    );
-    setCart(updatedCart);
-    toast.warning("Product removed from cart");
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const calculateTotalCost = () => {
     const total = cart.reduce((sum, product) => sum + product.price, 0);
     setTotalCost(total);
   };
 
-  const handleSortByPrice = () => {
-    const sortedCart = [...cart];
-    if (isAscending) {
-      sortedCart.sort((a, b) => a.price - b.price);
+  const handleRemoveItem = (productId) => {
+    if (activeTab === "cart") {
+      const updatedCart = cart.filter(
+        (product) => product.product_id !== productId
+      );
+      setCart(updatedCart);
+      toast.warning("Product removed from cart");
     } else {
-      sortedCart.sort((a, b) => b.price - a.price);
+      const updatedWishlist = wishlist.filter(
+        (product) => product.product_id !== productId
+      );
+      setWishlist(updatedWishlist);
+      toast.warning("Product removed from wishlist");
     }
-    setCart(sortedCart);
+  };
+
+  const handleSortByPrice = () => {
+    const items = activeTab === "cart" ? [...cart] : [...wishlist];
+    if (isAscending) {
+      items.sort((a, b) => a.price - b.price);
+    } else {
+      items.sort((a, b) => b.price - a.price);
+    }
+    if (activeTab === "cart") setCart(items);
+    else setWishlist(items);
     setIsAscending(!isAscending);
   };
 
@@ -39,9 +50,27 @@ const Dashboard = () => {
     setActiveTab(tab);
   };
 
+  const handleAddToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+    setWishlist((prevWishlist) =>
+      prevWishlist.filter((item) => item.product_id !== product.product_id)
+    );
+    toast.success("Product added to cart");
+  };
+
   useEffect(() => {
-    calculateTotalCost();
-  }, [cart]);
+    if (activeTab === "cart") calculateTotalCost();
+  }, [cart, activeTab]);
+
+  const handlePurchaseClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const activeItems = activeTab === "cart" ? cart : wishlist;
 
   return (
     <div>
@@ -55,13 +84,17 @@ const Dashboard = () => {
           </p>
           <div className="max-lg items-center justify-center text-center">
             <button
-              className="btn mr-3 items-center rounded-full text-white bg-[#9538E2] hover:text-purple-800 hover:bg-white"
+              className={`btn mr-3 items-center rounded-full ${
+                activeTab === "cart" ? "bg-purple-600" : "bg-gray-200"
+              } text-white`}
               onClick={() => handleTabChange("cart")}
             >
               Add To Cart
             </button>
             <button
-              className="btn mr-3 items-center rounded-full text-white bg-[#9538E2] hover:text-purple-800 hover:bg-white"
+              className={`btn mr-3 items-center rounded-full ${
+                activeTab === "wishlist" ? "bg-purple-600" : "bg-gray-200"
+              } text-white`}
               onClick={() => handleTabChange("wishlist")}
             >
               Wishlist
@@ -74,27 +107,28 @@ const Dashboard = () => {
         <div className="flex items-center text-right justify-start">
           <p>{activeTab === "cart" ? "Cart" : "Wishlist"}</p>
         </div>
-        <div className="flex justify-center mx-auto items-center gap-2">
-          {activeTab === "cart" && (
-            <>
-              <p>Total cost: ${totalCost.toFixed(2)}</p>
-              <button
-                onClick={handleSortByPrice}
-                className="btn items-center rounded-full text-white bg-[#9538E2] hover:text-purple-800 hover:bg-white"
-              >
-                Sort by Price
-                <FaSort />
-              </button>
-              <button className="btn mr-3 items-center rounded-full text-white bg-[#9538E2] hover:text-purple-800 hover:bg-white">
-                Purchase
-              </button>
-            </>
-          )}
-        </div>
+        {activeTab === "cart" && (
+          <div className="flex justify-center mx-auto items-center gap-2">
+            <p>Total cost: ${totalCost.toFixed(2)}</p>
+            <button
+              onClick={handleSortByPrice}
+              className="btn items-center rounded-full text-white bg-[#9538E2] hover:text-purple-800 hover:bg-white"
+            >
+              Sort by Price
+              <FaSort />
+            </button>
+            <button
+              onClick={handlePurchaseClick}
+              className="btn mr-3 items-center rounded-full text-white bg-[#9538E2] hover:text-purple-800 hover:bg-white"
+            >
+              Purchase
+            </button>
+          </div>
+        )}
       </div>
 
-      {activeTab === "cart" && cart.length > 0 ? (
-        cart.map((product) => (
+      {activeItems.length > 0 ? (
+        activeItems.map((product) => (
           <div key={product.product_id} className="bg-gray-100 py-4">
             <div className="w-3/4 mb-5 container mx-auto px-4 space-y-5">
               <div className="flex items-center bg-white justify-between rounded-lg border p-3">
@@ -114,11 +148,17 @@ const Dashboard = () => {
                     <p className="text-xs text-gray-600">
                       Price: ${product.price}
                     </p>
+                    {activeTab === "wishlist" && (
+                      <button
+                        className="btn mr-3 items-center rounded-full bg-purple-600 text-white"
+                        onClick={() => handleAddToCart(product)}
+                      >
+                        Add to Cart
+                      </button>
+                    )}
                   </div>
                 </div>
-                <button
-                  onClick={() => handleRemoveFromCart(product.product_id)}
-                >
+                <button onClick={() => handleRemoveItem(product.product_id)}>
                   <i className="text-2xl font-bold text-red-500">
                     <IoIosCloseCircleOutline />
                   </i>
@@ -127,11 +167,10 @@ const Dashboard = () => {
             </div>
           </div>
         ))
-      ) : activeTab === "cart" ? (
-        <p>No items in the cart.</p>
       ) : (
-        <p>No items in the wishlist.</p>
+        <p>No items in the {activeTab}.</p>
       )}
+      {isModalOpen && <PopUp closeModal={closeModal} totalCost={totalCost} />}
     </div>
   );
 };

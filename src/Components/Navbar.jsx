@@ -33,6 +33,7 @@ const Navbar = () => {
             <Link to="/">Home</Link>
             <Link to="/statistics">Statistics</Link>
             <Link to="/dashboard">Dashboard</Link>
+            <Link to="/contractus">Contact Us</Link>
           </ul>
         </div>
         <Link to="/" className=" text-xl md:text-2xl font-extrabold">
@@ -44,13 +45,14 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           <Link to="/statistics">Statistics</Link>
           <Link to="/dashboard">Dashboard</Link>
+          <Link to="/contractus">Contact Us</Link>
         </ul>
       </div>
       <div className="navbar-end text-3xl gap-4">
         <button className="flex bg-white text-black  rounded-full p-5 py-2">
           <CiShoppingCart /> <span>{cart.length}</span>
         </button>
-        <button className=" flex bg-white text-black  rounded-full p-2">
+        <button className=" flex bg-white text-black  rounded-full p-5 py-2">
           <FaRegHeart /> <span>{wishlist.length}</span>
         </button>
       </div>

@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
     setProducts(categories);
-  }, [categories, setProducts]); // Assuming you have a context to store user information
+  }, [categories, setProducts]); 
 
   return (
     <div>
